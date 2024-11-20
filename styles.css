@@ -1,0 +1,147 @@
+/* Reinicio de estilos básicos */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo general */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Contenedor principal */
+.contenedor {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+}
+/* Barra de navegación fija */
+.navegacion {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  z-index: 1000;
+}
+
+/* Estilo para la navegación */
+.navegacion nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/* Contenido principal */
+#contenido {
+  flex: 1; /* Mantiene el espacio restante para el contenido */
+  display: flex; /* Cambiamos a flexbox para ajustar al lienzo */
+  justify-content: center;
+  align-items: flex-start;
+  padding: 60px 20px;
+  overflow-y: auto;
+}
+
+/* Pie de página fijo */
+.pie-pagina {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+  z-index: 1000;
+}
+
+/* Stats Player */
+#stats_player {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+}
+
+/* Estilo para los botones */
+button {
+  padding: 8px 16px;
+  font-size: 14px;
+  background-color: #555;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #444;
+}
+
+/* Input de búsqueda */
+#inputBuscar {
+  padding: 5px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: none;
+}
+
+/* Estilo para el lienzo */
+#lienzo {
+  display: grid; /* Usamos grid para distribuir los productos */
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajusta productos dinámicamente */
+  width: 100%; /* Asegura que el lienzo ocupe todo el ancho */
+  max-width: 1200px; /* Establece un máximo para mantener proporciones */
+  margin: 0 auto; /* Centra el contenido */
+  background-color: #111;
+  padding: 20px;
+}
+
+/* Estilo para cada producto */
+.producto {
+  border: 1px solid #ccc;
+  padding: 20px;
+  background-color: #222;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsividad */
+@media (max-width: 600px) {
+  #contenido {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Estilo exclusivo para el contador del carrito */
+#btn-carrito-cantidad {
+  background-color: #333; /* Mismo color que la navegación */
+  color: #fff; /* Color del texto */
+  border: none; /* Sin bordes */
+  padding: 5px 10px; /* Ajusta el espacio interno */
+  font-size: 14px; /* Tamaño de fuente */
+  border-radius: 50%; /* Forma circular */
+  text-align: left; /* Alinea el texto a la izquierda */
+  display: inline-block; /* Ajusta el tamaño al contenido */
+  line-height: 1.5; /* Asegura el centrado vertical */
+  padding-left: 10px; /* Da más espacio a la izquierda */
+}
+
+/* Evitar que se comporte como botón */
+#btn-carrito-cantidad:hover {
+  background-color: #333; /* Mantiene el color al pasar el mouse */
+  cursor: default; /* No parece clickeable */
+}
