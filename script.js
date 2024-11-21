@@ -79,7 +79,6 @@ function agregarAlCarrito(idProducto) {
   } else {
     carrito.push({ ...producto, cantidad: 1 })
   }
-
   guardarEnStorage("carrito", carrito)
   actualizarCantidadCarrito()
 }
@@ -200,21 +199,17 @@ function buscarProductos() {
 
 
 
-document.getElementById("btn-tienda").addEventListener("click", () => {
-  document.querySelector("[data-modo]").dataset.modo = "tienda"
-  renderizarTienda()
-  actualizarVisibilidadBusqueda()
-})
-document.getElementById("btn-carrito").addEventListener("click", () => {
-  document.querySelector("[data-modo]").dataset.modo = "carrito"
-  mostrarCarrito()
-  actualizarVisibilidadBusqueda()
-})
-document.getElementById("btn-batalla").addEventListener("click", () => {
-  document.querySelector("[data-modo]").dataset.modo = "batalla"
-  mostrarBatalla()
-  actualizarVisibilidadBusqueda()
-})
+function configurarModo(modo) {
+  document.querySelector("[data-modo]").dataset.modo = modo;
+  actualizarVisibilidadBusqueda();
+  if (modo === "tienda") renderizarTienda();
+  else if (modo === "carrito") mostrarCarrito();
+  else if (modo === "batalla") mostrarBatalla();
+}
+document.getElementById("btn-tienda").addEventListener("click", () => configurarModo("tienda"));
+document.getElementById("btn-carrito").addEventListener("click", () => configurarModo("carrito"));
+document.getElementById("btn-batalla").addEventListener("click", () => configurarModo("batalla"));
+
 
 //Este es para buscar con el input
 document.getElementById("inputBuscar").addEventListener("input", buscarProductos)
