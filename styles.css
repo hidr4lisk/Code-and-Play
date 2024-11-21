@@ -125,23 +125,23 @@ button:hover {
     grid-template-columns: 1fr;
   }
 }
+.shake {
+  animation: shake 0.5s;
 
-/* Estilo exclusivo para el contador del carrito */
-#btn-carrito-cantidad {
-  background-color: #333; /* Mismo color que la navegación */
-  color: #fff; /* Color del texto */
-  border: none; /* Sin bordes */
-  padding: 5px 10px; /* Ajusta el espacio interno */
-  font-size: 14px; /* Tamaño de fuente */
-  border-radius: 50%; /* Forma circular */
-  text-align: left; /* Alinea el texto a la izquierda */
-  display: inline-block; /* Ajusta el tamaño al contenido */
-  line-height: 1.5; /* Asegura el centrado vertical */
-  padding-left: 10px; /* Da más espacio a la izquierda */
+  animation-iteration-count: 2;
 }
 
-/* Evitar que se comporte como botón */
-#btn-carrito-cantidad:hover {
-  background-color: #333; /* Mantiene el color al pasar el mouse */
-  cursor: default; /* No parece clickeable */
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
+

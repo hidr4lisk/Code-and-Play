@@ -5,6 +5,7 @@ import { jugador } from './jugador.js'
 // Variables iniciales
 let carrito = obtenerDelStorage("carrito") || [] // Cargar carrito desde localStorage si existe
 let stats = obtenerDelStorage("stats") || jugador // Cargar stats desde localStorage si existe
+let diamantes = 10000 // Carga los diamantes, cuando el juego este establecido arranca en 0
 
 // Funciones auxiliares
 
@@ -22,11 +23,11 @@ function obtenerDelStorage(clave) {
 
 // Función para actualizar la cantidad en el botón del carrito
 function actualizarCantidadCarrito() {
-  const botonCantidadCarrito = document.getElementById("btn-carrito-cantidad")
+  const cantidadCarrito = document.getElementById("btn-carrito")
   const cantidadTotal = carrito.length > 0
     ? carrito.reduce((total, producto) => total + producto.cantidad, 0)
     : 0
-  botonCantidadCarrito.textContent = cantidadTotal === 0 ? " " : `(${cantidadTotal})`
+  cantidadCarrito.textContent = cantidadTotal === 0 ? "Carrito" : `Carrito(${cantidadTotal})`
 }
 
 // Funciones principales --------------------------------//
