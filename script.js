@@ -5,7 +5,7 @@ import { jugador } from './jugador.js'
 // Variables iniciales
 let carrito = obtenerDelStorage("carrito") || [] // Cargar carrito desde localStorage si existe
 let stats = obtenerDelStorage("stats") || jugador // Cargar stats desde localStorage si existe
-let diamantes = 10000 // Carga los diamantes, cuando el juego este establecido arranca en 0
+jugador.diamantes = 10000 // Carga los diamantes, cuando el juego este establecido arranca en 0
 
 // Funciones auxiliares
 
@@ -150,21 +150,69 @@ function mostrarBatalla() {
   lienzo.innerHTML = 'Batalla'
 }
 
-// Renderizar los stats del jugador
 function renderizarStats() {
-  const statsPlayer = document.getElementById("stats_player")
-  statsPlayer.innerHTML = '' // Limpiar los stats previos
+  const statsPlayer = document.getElementById("stats_player");
+  statsPlayer.innerHTML = ''; // Limpiar los stats previos
 
-  const atributosAMostrar = ["vida", "daño", "critico", "esquiva", "bloqueo", "armadura"]
-  atributosAMostrar.forEach(attr => {
+  // Iterar sobre todas las propiedades del objeto "jugador"
+  for (let attr in jugador) {
     if (jugador.hasOwnProperty(attr)) {
-      const divStat = document.createElement("div")
-      divStat.classList.add("stat")
-      divStat.innerHTML = `<h2>📄 ${attr}: ${jugador[attr]}</h2>`
-      statsPlayer.appendChild(divStat)
+      const divStat = document.createElement("div");
+      divStat.classList.add("stat");
+
+      // Capitalizar la primera letra del atributo para una mejor presentación
+      const atributoFormateado = attr.charAt(0).toUpperCase() + attr.slice(1);
+
+      // Definir el color dependiendo del atributo
+      let colorNombre = 'black'; // Valor por defecto para el nombre del atributo
+
+      switch (attr) {
+        case 'vida':
+          colorNombre = 'red'; // Rojo para "vida"
+          break;
+        case 'daño':
+          colorNombre = 'orange'; // Naranja para "daño"
+          break;
+        case 'critico':
+          colorNombre = 'purple'; // Púrpura para "critico"
+          break;
+        case 'esquiva':
+          colorNombre = 'yellow'; // Amarillo para "esquiva"
+          break;
+        case 'bloqueo':
+          colorNombre = 'blue'; // Azul para "bloqueo"
+          break;
+        case 'armadura':
+          colorNombre = 'green'; // Verde para "armadura"
+          break;
+        case 'diamantes':
+          colorNombre = 'gold'; // Oro para "diamantes"
+          break;
+        default:
+          colorNombre = 'black'; // Si no tiene un color asignado, negro por defecto
+      }
+
+      // Crear el HTML para el atributo con el color en el nombre y blanco en el valor
+      divStat.innerHTML = `
+        <h2 style="
+          color: ${colorNombre}; 
+          text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3), 0 0 5px ${colorNombre}; 
+          font-weight: bold; 
+          text-transform: uppercase; 
+          font-family: 'Arial', sans-serif;">
+          ${atributoFormateado}
+        </h2>
+        <h2 style="color: white; font-weight: normal; font-family: 'Arial', sans-serif;">
+          ${jugador[attr]}
+        </h2>
+      `;
+      statsPlayer.appendChild(divStat);
     }
-  })
+  }
 }
+
+
+
 
 // Actualizar la visibilidad de la barra de búsqueda
 function actualizarVisibilidadBusqueda() {
