@@ -111,8 +111,11 @@ function mostrarCarrito(filtrar = '') {
       <p>${producto.categoria}</p>
       <p>💎${producto.precio}</p>
       <p>Cantidad en Carrito: ${producto.cantidad}</p>
-      <button class="btn-agregar click-shrink">+</button>
-      <button class="btn-eliminar click-shrink">-</button>
+      <div class="botones">
+        <button class="btn-agregar click-shrink">+</button>
+        <button class="btn-eliminar click-shrink">-</button>
+      </div>
+
     `
     const botonAgregar = divProducto.querySelector(".btn-agregar")
     const botonEliminar = divProducto.querySelector(".btn-eliminar")
@@ -168,25 +171,25 @@ function renderizarStats() {
 
       switch (attr) {
         case 'vida':
-          colorNombre = 'red'; // Rojo para "vida"
+          colorNombre = 'green'; // "vida"
           break;
         case 'daño':
-          colorNombre = 'orange'; // Naranja para "daño"
+          colorNombre = 'red'; // "daño"
           break;
         case 'critico':
-          colorNombre = 'purple'; // Púrpura para "critico"
+          colorNombre = 'orange'; // "critico"
           break;
         case 'esquiva':
-          colorNombre = 'yellow'; // Amarillo para "esquiva"
+          colorNombre = 'gray'; // "esquiva"
           break;
         case 'bloqueo':
-          colorNombre = 'blue'; // Azul para "bloqueo"
+          colorNombre = 'violet'; // "bloqueo"
           break;
         case 'armadura':
-          colorNombre = 'green'; // Verde para "armadura"
+          colorNombre = 'purple'; // "armadura"
           break;
         case 'diamantes':
-          colorNombre = 'gold'; // Oro para "diamantes"
+          colorNombre = 'cyan'; // "diamantes"
           break;
         default:
           colorNombre = 'black'; // Si no tiene un color asignado, negro por defecto
