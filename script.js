@@ -56,7 +56,7 @@ function renderizarTienda(filtrar = '') {
       <h3>${producto.nombre} +${producto.mejora}</h3>
       <p>${producto.categoria}</p>
       <p>💎${producto.precio}</p>
-      <button class="btn-agregar">Agregar al Carrito</button>
+      <button class="btn-agregar click-shrink">Agregar al Carrito</button>
     `
     const botonAgregar = divProducto.querySelector(".btn-agregar")
     botonAgregar.addEventListener("click", () => agregarAlCarrito(producto.id))
@@ -111,8 +111,8 @@ function mostrarCarrito(filtrar = '') {
       <p>${producto.categoria}</p>
       <p>💎${producto.precio}</p>
       <p>Cantidad en Carrito: ${producto.cantidad}</p>
-      <button class="btn-agregar">+</button>
-      <button class="btn-eliminar">-</button>
+      <button class="btn-agregar click-shrink">+</button>
+      <button class="btn-eliminar click-shrink">-</button>
     `
     const botonAgregar = divProducto.querySelector(".btn-agregar")
     const botonEliminar = divProducto.querySelector(".btn-eliminar")

@@ -126,3 +126,11 @@ button:hover {
   }
 }
 
+/* Shrink Animation */
+.click-shrink {
+  background: #3a3737;
+}
+
+.click-shrink:active {
+  transform: scale(0.9);
+}
