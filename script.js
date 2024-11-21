@@ -197,6 +197,9 @@ function buscarProductos() {
 // Eventos ---------------------------------------//
 
 //Aca manejamos los cambios entre TIENDA / CARRITO / BATALLA
+
+
+
 document.getElementById("btn-tienda").addEventListener("click", () => {
   document.querySelector("[data-modo]").dataset.modo = "tienda"
   renderizarTienda()
