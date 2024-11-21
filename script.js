@@ -223,5 +223,3 @@ document.addEventListener("DOMContentLoaded", () => {
   mostrarBatalla()
   actualizarCantidadCarrito()
 })
-
-
