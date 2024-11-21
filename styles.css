@@ -101,12 +101,14 @@ button:hover {
 #lienzo {
   display: grid; /* Usamos grid para distribuir los productos */
   gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajusta productos dinámicamente */
+  /*grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajusta productos dinámicamente */
   width: 100%; /* Asegura que el lienzo ocupe todo el ancho */
   max-width: 1200px; /* Establece un máximo para mantener proporciones */
   margin: 0 auto; /* Centra el contenido */
   background-color: #111;
   padding: 20px;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 /* Estilo para cada producto */
@@ -117,6 +119,7 @@ button:hover {
   text-align: center;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: fit-content;
 }
 
 /* Responsividad */
