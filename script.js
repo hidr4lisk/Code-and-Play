@@ -29,7 +29,7 @@ function actualizarCantidadCarrito() {
   botonCantidadCarrito.textContent = cantidadTotal === 0 ? " " : `(${cantidadTotal})`
 }
 
-// Funciones principales
+// Funciones principales --------------------------------//
 
 // Renderizar la tienda
 function renderizarTienda(filtrar = '') {
@@ -193,7 +193,9 @@ function buscarProductos() {
   modo === "tienda" ? renderizarTienda(termino) : mostrarCarrito(termino)
 }
 
-// Eventos
+// Eventos ---------------------------------------//
+
+//Aca manejamos los cambios entre TIENDA / CARRITO / BATALLA
 document.getElementById("btn-tienda").addEventListener("click", () => {
   document.querySelector("[data-modo]").dataset.modo = "tienda"
   renderizarTienda()
@@ -210,12 +212,16 @@ document.getElementById("btn-batalla").addEventListener("click", () => {
   actualizarVisibilidadBusqueda()
 })
 
+//Este es para buscar con el input
 document.getElementById("inputBuscar").addEventListener("input", buscarProductos)
+
+//Este es para buscar pero escribiendo
 document.getElementById("inputBuscar").addEventListener("keydown", (event) => {
   if (event.key === 'Enter') buscarProductos()
 })
 
-// Inicialización
+// Inicialización ---------------------------------//
+
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelector("[data-modo]").dataset.modo = "batalla"
   actualizarVisibilidadBusqueda()
