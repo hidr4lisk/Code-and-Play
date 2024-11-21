@@ -9,3 +9,5 @@ function damageCalculator(daño, critico, esquivaObjetivo, bloqueoObjetivo, arma
     }
     return total
   }
+
+
