@@ -164,3 +164,47 @@ button:hover {
 .btn-eliminar:hover {
   background-color: #666;
 }
+/* Responsividad */
+@media (max-width: 600px) {
+  body {
+    font-size: 14px; /* Reduce el tamaño de fuente */
+  }
+
+  .navegacion nav {
+    flex-direction: column; /* Cambia a diseño vertical */
+    align-items: flex-start; /* Alinea los elementos a la izquierda */
+  }
+
+  #contenido {
+    flex-direction: column; /* Acomoda el contenido en columna */
+    align-items: center; /* Centra el contenido en pantallas pequeñas */
+    padding: 20px 10px; /* Reduce el padding */
+  }
+
+  #lienzo {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Ajusta los productos a pantallas más pequeñas */
+    gap: 10px; /* Reduce el espacio entre productos */
+  }
+
+  .producto {
+    padding: 10px; /* Reduce el padding del producto */
+  }
+
+  .botones {
+    flex-direction: column; /* Cambia a diseño vertical para los botones */
+    gap: 5px; /* Menor espacio entre botones */
+  }
+
+  button {
+    padding: 6px 12px; /* Reduce el tamaño de los botones */
+    font-size: 12px;
+  }
+}
+
+/* Opcional: Para tablets (pantallas medianas) */
+@media (max-width: 900px) {
+  #lienzo {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Ajusta las columnas */
+    gap: 15px;
+  }
+}
