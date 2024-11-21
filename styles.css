@@ -24,6 +24,7 @@ body {
   min-height: 100vh;
   position: relative;
 }
+
 /* Barra de navegación fija */
 .navegacion {
   position: sticky;
@@ -36,7 +37,6 @@ body {
   z-index: 1000;
 }
 
-/* Estilo para la navegación */
 .navegacion nav {
   display: flex;
   align-items: center;
@@ -45,8 +45,8 @@ body {
 
 /* Contenido principal */
 #contenido {
-  flex: 1; /* Mantiene el espacio restante para el contenido */
-  display: flex; /* Cambiamos a flexbox para ajustar al lienzo */
+  flex: 1;
+  display: flex;
   justify-content: center;
   align-items: flex-start;
   padding: 60px 20px;
@@ -59,7 +59,7 @@ body {
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: #000000;
+  background-color: #000;
   color: #fff;
   padding: 10px 20px;
   text-align: center;
@@ -74,7 +74,7 @@ body {
   font-size: 14px;
 }
 
-/* Estilo para los botones */
+/* Botones */
 button {
   padding: 8px 16px;
   font-size: 14px;
@@ -83,10 +83,41 @@ button {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 button:hover {
   background-color: #444;
+}
+
+.click-shrink {
+  background: #595555;
+}
+
+.click-shrink:active {
+  transform: scale(0.9);
+}
+
+.botones {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.btn-agregar,
+.btn-eliminar {
+  padding: 8px 12px;
+  background-color: #444;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-agregar:hover,
+.btn-eliminar:hover {
+  background-color: #666;
 }
 
 /* Input de búsqueda */
@@ -100,11 +131,11 @@ button:hover {
 /* Estilo para el lienzo */
 #lienzo {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ajusta productos dinámicamente */
-  gap: 20px; /* Espacio entre los productos */
-  width: 100%; /* Asegura que el lienzo ocupe todo el ancho */
-  max-width: 1200px; /* Establece un máximo para mantener proporciones */
-  margin: 0 auto; /* Centra el contenido */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
   background-color: #111;
   padding: 20px;
 }
@@ -117,94 +148,54 @@ button:hover {
   text-align: center;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  width: 100%; /* Llenan el espacio asignado por la celda */
-  height: auto; /* Ajuste dinámico según el contenido */
-  display: flex; /* Alineación interna */
+  width: 100%;
+  height: auto;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-
 /* Responsividad */
-@media (max-width: 600px) {
-  #contenido {
-    grid-template-columns: 1fr;
+@media (max-width: 900px) {
+  #lienzo {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
   }
 }
 
-/* Shrink Animation */
-.click-shrink {
-  background: #595555;
-}
-
-.click-shrink:active {
-  transform: scale(0.9);
-}
-
-.botones {
-  display: flex; /* Alinea los botones en fila */
-  justify-content: center; /* Centra los botones horizontalmente */
-  gap: 10px; /* Espacio entre los botones */
-  margin-top: 10px; /* Espacio con respecto a otros elementos del producto */
-}
-
-.btn-agregar,
-.btn-eliminar {
-  padding: 8px 12px;
-  background-color: #444;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.btn-agregar:hover,
-.btn-eliminar:hover {
-  background-color: #666;
-}
-/* Responsividad */
 @media (max-width: 600px) {
   body {
-    font-size: 14px; /* Reduce el tamaño de fuente */
+    font-size: 14px;
   }
 
   .navegacion nav {
-    flex-direction: column; /* Cambia a diseño vertical */
-    align-items: flex-start; /* Alinea los elementos a la izquierda */
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   #contenido {
-    flex-direction: column; /* Acomoda el contenido en columna */
-    align-items: center; /* Centra el contenido en pantallas pequeñas */
-    padding: 20px 10px; /* Reduce el padding */
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 10px;
   }
 
   #lienzo {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Ajusta los productos a pantallas más pequeñas */
-    gap: 10px; /* Reduce el espacio entre productos */
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
   }
 
   .producto {
-    padding: 10px; /* Reduce el padding del producto */
+    padding: 10px;
   }
 
   .botones {
-    flex-direction: column; /* Cambia a diseño vertical para los botones */
-    gap: 5px; /* Menor espacio entre botones */
+    flex-direction: column;
+    gap: 5px;
   }
 
   button {
-    padding: 6px 12px; /* Reduce el tamaño de los botones */
+    padding: 6px 12px;
     font-size: 12px;
-  }
-}
-
-/* Opcional: Para tablets (pantallas medianas) */
-@media (max-width: 900px) {
-  #lienzo {
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Ajusta las columnas */
-    gap: 15px;
   }
 }
