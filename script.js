@@ -197,17 +197,17 @@ function renderizarStats() {
 
       // Crear el HTML para el atributo con el color en el nombre y blanco en el valor
       divStat.innerHTML = `
-        <h2 style="
+        <p style="
           color: ${colorNombre}; 
           text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3), 0 0 5px ${colorNombre}; 
           font-weight: bold; 
           text-transform: uppercase; 
           font-family: 'Arial', sans-serif;">
           ${atributoFormateado}
-        </h2>
-        <h2 style="color: white; font-weight: normal; font-family: 'Arial', sans-serif;">
+        </p>
+        <p style="color: white; font-weight: normal; font-family: 'Arial', sans-serif;">
           ${jugador[attr]}
-        </h2>
+        </p>
       `;
       statsPlayer.appendChild(divStat);
     }
