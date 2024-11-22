@@ -31,16 +31,18 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #333;
+  background-color: transparent;
   color: #fff;
-  padding: 10px 20px;
   z-index: 1000;
 }
 
 .navegacion nav {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content:right ;
+  gap: 20px;
+  padding-right: 50px;
+  padding-top: 10px;
 }
 
 /* Contenido principal */
