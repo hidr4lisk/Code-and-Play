@@ -169,6 +169,10 @@ button:hover {
     font-size: 14px;
   }
 
+  stats {
+    font-size: 14px;
+  }
+
   .navegacion nav {
     flex-direction: column;
     align-items: flex-start;
