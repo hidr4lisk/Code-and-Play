@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumno Furgiuele</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="contenedor">
+        <!-- Barra de navegación -->
+        <header class="navegacion">
+            <nav>
+                <input id="inputBuscar" placeholder="Escriba para filtrar">
+                <div id="botonera">
+                    <button id="btn-batalla" class="click-shrink">Batalla</button>
+                    <button id="btn-tienda" class="click-shrink">Tienda</button>
+                    <button id="btn-carrito" class="click-shrink">Carrito</button>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Contenido principal -->
+        <main id="contenido">
+            <section id="lienzo" data-modo="batalla"></section>
+        </main>
+
+        <!-- Pie de página fijo -->
+        <footer class="pie-pagina">
+            <div id="stats_player">Stats del Player</div>
+        </footer>
+    </div>
+    <script type="module" src="./script.js"></script>
+</body>
+</html>
+
