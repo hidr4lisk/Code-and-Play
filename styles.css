@@ -39,10 +39,9 @@ body {
 .navegacion nav {
   display: flex;
   align-items: center;
-  justify-content:right ;
+  justify-content: right;
   gap: 20px;
-  padding-right: 50px;
-  padding-top: 10px;
+  padding: 10px 50px 0;
 }
 
 /* Contenido principal */
@@ -68,14 +67,6 @@ body {
   z-index: 1000;
 }
 
-/* Stats Player */
-#stats_player {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  font-size: 14px;
-}
-
 /* Botones */
 button {
   padding: 8px 16px;
@@ -85,11 +76,12 @@ button {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.1s ease-in-out;
 }
 
 button:hover {
   background-color: #444;
+  transform: scale(1.05);
 }
 
 .click-shrink {
@@ -100,6 +92,7 @@ button:hover {
   transform: scale(0.9);
 }
 
+/* Botones adicionales */
 .botones {
   display: flex;
   justify-content: center;
@@ -130,6 +123,14 @@ button:hover {
   border: none;
 }
 
+/* Stats Player */
+#stats_player {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 14px;
+}
+
 /* Estilo para el lienzo */
 #lienzo {
   display: grid;
@@ -149,9 +150,7 @@ button:hover {
   background-color: #222;
   text-align: center;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  height: auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -170,6 +169,7 @@ button:hover {
   body {
     font-size: 14px;
   }
+
   .navegacion nav {
     flex-direction: column;
     align-items: flex-start;
@@ -198,5 +198,12 @@ button:hover {
   button {
     padding: 6px 12px;
     font-size: 12px;
+  }
+}
+
+/* Pantallas grandes */
+@media (min-width: 1200px) {
+  #lienzo {
+    max-width: 1400px;
   }
 }
