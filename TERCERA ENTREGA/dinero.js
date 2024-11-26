@@ -1,0 +1,1 @@
+export const diamantes = 10000

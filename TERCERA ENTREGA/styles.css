@@ -1,0 +1,10 @@
+#estadisticas_jugador {
+    display: flex;
+    justify-content: space-between;
+}
+#botonera_principal{
+    display: flex;
+}
+#botonera_secundaria{
+    display: flex;
+}
