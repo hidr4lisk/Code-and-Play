@@ -1,9 +1,9 @@
 // Importar los productos desde los archivos correspondientes
 //import { mejoras } from './mejoras.js'
-import { estadisticas } from './estadisticas.js'
+import { estadisticas } from './modules/estadisticas.js'
 //import { diamantes } from './dinero.js'
-import * as sys from './sistema.js'
-import * as render from './render.js'
+import * as sys from './modules/sistema.js'
+import * as render from './modules/render.js'
 //import * as search from './filtros.js'
 
 
